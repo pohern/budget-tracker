@@ -8,7 +8,7 @@ const Spent = () => {
     return (total += item.cost);
   }, 0);
   return (
-    <div className='alert alert-primary'>
+    <div className='alert alert-primary p-4'>
       <span>Spent so far: ${totalExpenses}</span>
     </div>
   );
