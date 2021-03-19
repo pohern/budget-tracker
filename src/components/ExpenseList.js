@@ -9,13 +9,17 @@ const ExpenseList = () => {
         { id: 4, name: 'Rent', cost: 520},
         { id: 5, name: 'Presents', cost: 150},
     ]
-    return ( 
-        <ul>
-            {expenses.map((expense)=>(
-                <ExpenseItem id={expense.id} name={expense.name} cost={expense.cost}/>
-            ))}
-        </ul>
-     );
+    return (
+      <ul className='list-group'>
+        {expenses.map((expense) => (
+          <ExpenseItem
+            id={expense.id}
+            name={expense.name}
+            cost={expense.cost}
+          />
+        ))}
+      </ul>
+    );
 }
  
 export default ExpenseList;
