@@ -5,17 +5,17 @@ import { AppContext } from "../context/AppContext";
 const ExpenseList = () => {
   const { expenses } = useContext(AppContext);
 
-  const [filteredExpenses, setFilteredExpenses] = useState(expenses || []);
+  const [filteredExpenses, setfilteredExpenses] = useState(expenses || []);
 
   useEffect(() => {
-    setFilteredExpenses(expenses);
+    setfilteredExpenses(expenses);
   }, [expenses]);
 
-  const handleChange = (e) => {
-    const searchResults = expenses.filter((filteredExpenses) =>
-      filteredExpenses.name.toLowerCase().includes(e.target.value)
+  const handleChange = (event) => {
+    const searchResults = expenses.filter((filteredExpense) =>
+      filteredExpense.name.toLowerCase().includes(event.target.value)
     );
-    setFilteredExpenses(searchResults);
+    setfilteredExpenses(searchResults);
   };
 
   return (
@@ -28,7 +28,7 @@ const ExpenseList = () => {
       />
 
       <ul className='list-group mt-3 mb-3'>
-        {expenses.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             id={expense.id}
             name={expense.name}
